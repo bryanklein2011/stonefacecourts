@@ -1,499 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with JohnDoe landing page.">
-    <meta name="author" content="Devcrud">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stoneface Courts</title>
-    <!-- font icons -->
-    <link rel="stylesheet" href="public_html/assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Bootstrap + JohnDoe main styles -->
-	<link rel="stylesheet" href="public_html/assets/css/johndoe.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-out both;
+        }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const carousel = document.getElementById('carousel');
+            let scrollStep = 0;
+            let direction = 1;
+            const scrollInterval = setInterval(() => {
+                if (!carousel) return;
+                if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+                    direction = -1;
+                } else if (carousel.scrollLeft <= 0) {
+                    direction = 1;
+                }
+                scrollStep += 2 * direction;
+                carousel.scrollTo({ left: scrollStep, behavior: 'smooth' });
+            }, 50);
+        };
+    </script>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <header class="header">
-        <div class="container">
-            <ul class="social-icons pt-3">
-                <li class="social-item"><a class="social-link" href="https://www.facebook.com/Stone-Face-Courts-213918798679907"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-                <li class="social-item"><a class="social-link" href="https://www.instagram.com/stonefacecourts/"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-            <div class="header-content">
-                <h4 class="header-subtitle" >Welcome To</h4>
-                <h1 class="header-title">Stoneface Courts</h1>
-                <h6 class="header-mono" >Sand Volleyball Facility </h6>
-            </div>
-        </div>
-    </header>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white" data-spy="affix" data-offset-top="510">
-        <div class="container">
-            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse mt-sm-20 navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav brand">
-                    <img src="public_html/assets/imgs/buck2.jpg" alt="" class="brand-img">
-                    <li class="brand-txt">
-                        <h5 class="brand-title">StoneFace Courts</h5>
-                        <div class="brand-subtitle">Sand Volleyball Facility</div>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Say Cheese</a>
-                    </li>
+<body class=" bg-gradient-to-b from-yellow-200 via-yellow-300 to-yellow-400">
+<header class="z-50">
+    <div class="flex justify-center mb-4">
+        <img src="public_html/assets/imgs/logo.jpg" alt="Stoneface Courts Logo" class="h-24" />
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-bold text-center text-red-800">Stoneface Courts</h1>
+    <p class="text-center text-base sm:text-lg">10-Court Sand Volleyball Facility in Albuquerque, NM</p>
+</header>
 
-                    <li class="nav-item last-item">
-                        <a href="#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div id="about" class="row about-section">
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Welcome </h3>
-                <span class="line mb-5"></span>
-                <h5 class="mb-3"> 10 court sand volleyball facility </h5>
-                <p class="mt-20">We host different types of tournament ranging from 6's co-ed to competitive 2's. We host events that range from juniors events to adult outings and event corporate events. Whether you are a weekend warrior, ex-college player, drop-in regular, aspiring pro, or full on volleyball
-                    addict, Stone Face Courts  has a league, tournament or clinic to get you on the sand. Check out all we have to offer via our new website.</p>
-            </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">General Info</h3>
-                <span class="line mb-5"></span>
-                <ul class="mt40 info list-unstyled">
-                    <li><span>Email</span> : stonefacecourts@gmail.com</li>
-                    <li><span>Phone</span> : 505-310-0047</li>
-                    <li><span>Seasons</span> : Winter, Spring, Summer and Winter </li>
-                    <li><span>Address</span> :  6001 Holly Ave, Albuquerque NM 87113</li>
-                </ul>
-
-                <!-- Begin Mailchimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup">
-                    <form action="https://stonefacecourts.us21.list-manage.com/subscribe/post?u=6a628213aa540127474d31aa4&amp;id=ff842a1e0e&amp;f_id=0024b2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Subscribe</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-                                </label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-FNAME">First Name </label>
-                                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-                                <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group">
-                                <label for="mce-LNAME">Last Name </label>
-                                <input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-                                <span id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group size1of2">
-                                <label for="mce-PHONE">Phone Number </label>
-                                <input type="text" name="PHONE" class="" value="" id="mce-PHONE">
-                                <span id="mce-PHONE-HELPERTEXT" class="helper_text"></span>
-
-                            </div>
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6a628213aa540127474d31aa4_ff842a1e0e" tabindex="-1" value=""></div>
-                            <div class="optionalParent">
-                                <div class="clear foot">
-                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                    <p class="brandingLogo"><a href="http://eepurl.com/iqp9m-" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
-                <ul class="social-icons pt-3">
-                    <li class="social-item"><a class="social-link" href="https://www.facebook.com/Stone-Face-Courts-213918798679907"><i class="ti-facebook" aria-hidden="true"></i></a></li>
-                    <li class="social-item"><a class="social-link" href="https://www.instagram.com/stonefacecourts/"><i class="ti-instagram" aria-hidden="true"></i></a></li>
-
-                </ul>  
-            </div>
-            <div class="col-lg-4 about-card">
-                <h3 class="font-weight-light">Stoneface Courts</h3>
-                <span class="line mb-5"></span>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-eye"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Leagues</h6>
-                        <p class="subtitle"> Tuesday - Friday 6 pm to 10 pm</p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-agenda"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Doubles </h6>
-                        <p class="subtitle">Weekend Tournaments, youth and adult training </p>
-                        <hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 text-danger pt-1"><i class="ti-receipt"></i></div>
-                    <div class="col-10 ml-auto mr-3">
-                        <h6>Rentals and Events</h6>
-                        <p class="subtitle">Open to the public for any event </p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
+<section id="gallery" class="mb-10 animate-fade-in">
+    <h2 class="text-2xl font-bold mb-4"></h2>
+    <div class="overflow-hidden relative w-full max-w-4xl mx-auto">
+        <div id="carousel" class="flex gap-4 overflow-x-auto px-2 whitespace-nowrap scroll-smooth">
+            <img src="public_html/assets/imgs/elnea.jpg" alt="Gallery 1" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
+            <img src="public_html/assets/imgs/bryandave.jpg" alt="Gallery 2" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
+            <img src="public_html/assets/imgs/kelsey.jpg" alt="Gallery 3" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
+            <img src="public_html/assets/imgs/clinic2.jpg" alt="Gallery 3" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
+            <img src="public_html/assets/imgs/sandra.jpg" alt="Gallery 3" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
+            <img src="public_html/assets/imgs/league7.jpg" alt="Gallery 3" class="w-72 h-64 object-cover rounded-xl shadow-md flex-shrink-0" />
         </div>
     </div>
+    <p class="mt-4 text-center">
+        Check out photos from our leagues, tournaments, and clinics. Follow us on social media for more!
+    </p>
+</section>
 
-    <!--Resume Section-->
+<section id="about" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">About Us</h2>
+    <p>Welcome to Stoneface Courts, Albuquerque’s premier 10-court sand volleyball facility. Our courts are open for leagues, tournaments, and special events for all ages and skill levels.</p>
+    <p class="mt-4">We run exciting doubles, 4's, and 6's tournaments all year long, bringing competitive fun to every level of play. One of our proudest highlights is the <strong>Sandia Classic Doubles Tournament</strong> — one of the biggest beach-only volleyball tournaments in the country.</p>
+    <p class="mt-2">Beyond tournaments, we offer adult and youth training programs to help players grow their skills and confidence. Whether you're just starting or leveling up, our coaches and community will support you every step of the way.</p>
+    <p class="mt-2">Looking for a unique venue? We offer rentals for birthday parties, corporate events, and more. We also host charity tournaments and fundraisers, bringing people together for great causes through the game we love.</p>
+</section>
 
-
-    <section class="section" id="service">
-        <div class="container">
-            <h2 class="mb-5 pb-4"><span class="text-danger">Stoneface</span> Leagues</h2>
-            <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                            <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark" ><strong>Tuesday Night</strong> </h5>
-                            <P class="subtitle">6's Co-ed, Our most competitive league we offer for 6's.Early slots and Late slots available</P>
-                            <p><a href="https://stoneface.volleyballlife.com/"> <strong> Sign Up </strong></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                           <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark" ><strong>Wednesday Night</strong> </h5>
-                            <P class="subtitle">6's Co-ed,Early slots and Late slots available</P>
-                            <p><a href="https://stoneface.volleyballlife.com/"> <strong> Sign Up </strong></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                           <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark" ><strong>Thursday Night</strong> </h5>
-                            <P class="subtitle">6's Co-ed,Early slots and Late slots available</P>
-                            <p><a href="https://stoneface.volleyballlife.com/"> <strong> Sign Up </strong></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                           <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark" ><strong>Friday Night</strong> </h5>
-                            <P class="subtitle">6's Co-ed, Early slots and Late slots available </P>
-                            <p><a href="https://stoneface.volleyballlife.com/"> <strong> Sign Up </strong></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                           <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark"> <strong>Sandia Classic </strong></h5>
-                            <P class="subtitle"> Sonny tournament was founded by the late Sonny Marquez and will continue to be held in his memory. His love for
-                                beach volleyball and his dream for creating a marquee event here in Albuquerque will power this event for many years to come.</P>
-                            <p><a href="https://sandiavolleyballclassic.com/"> <strong>Sign up</strong></a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="card mb-5">
-                       <div class="card-header has-icon">
-                           <i class="ti-basketball" aria-hidden="true"></i>
-                        </div>
-                        <div class="card-body px-4 py-3">
-                            <h5 class="mb-3 card-title text-dark"> <strong>Group Me</strong></h5>
-                            <P class="subtitle">6's Co-ed, Early slots and Late slots available </P>
-                            <p><a href="https://app.groupme.com/join_group/92804517/4GMyCuKX"> <strong>Join up Now</strong> </a></p>
-                            <P class="subtitle"></P>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<section id="leagues" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">Leagues</h2>
+    <p>We offer leagues Tuesday through Friday from 6 PM to 10 PM, with early and late games available. Whether you're in it for fun or fierce competition, we’ve got a league for you.</p>
+    <p class="mt-4">Our league calendar follows the seasons — Winter, Spring, Summer, and Fall — giving you a chance to play all year long! Each season brings a fresh start, new teams, and a whole lot of excitement.</p>
+    <p class="mt-2">From beginners to seasoned players, our league nights are filled with laughter, energy, and competitive spirit. Join one or all four and see why our community keeps coming back season after season!</p>
+    <p class="mt-4"><a href="https://chat.whatsapp.com/GKFygwUdJ1NHST7wVILXJH" class="inline-block mt-4 px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">Join our WhatsApp group</a></p>
+    <a href="Sign up" class="mt-4 inline-block px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">Sign up for Leagues</a>
+    <p class="mt-2 font-semibold">Summer League sign-up opens mid May!</p>
+    <div id="instagram" class="mt-10">
+        <h3 class="text-xl font-bold mb-4 text-center">Live From Instagram</h3>
+        <div class="flex justify-center">
+            <iframe src="https://www.instagram.com/stonefacecourts/embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true" title="Instagram Feed" class="rounded-xl shadow-lg"></iframe>
         </div>
-    </section>
+        <p class="text-center mt-4">Follow us on <a href="https://www.instagram.com/stonefacecourts" target="_blank" class="inline-block px-4 py-2 bg-pink-600 text-white font-bold rounded-xl shadow hover:bg-pink-500 transition">Instagram</a> for more!</p>
+    </div>
+</section>
 
+<section id="tournaments" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">Tournaments</h2>
+    <p>Join our exciting tournaments including co-ed 6's, competitive 2's, and youth competitions. Don’t miss our annual Sandia Classic in honor of Sonny Marquez.</p>
+    <a href="https://bak.volleyballlife.com" class="mt-4 inline-block px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">Sign up for Tournaments</a>
+</section>
 
-    <!-- Portfolio Section -->
-    <section class="section bg-custom-gray" id="portfolio">
-        <div class="container">
-            <h1 class="mb-5"><span class="text-danger">Say
-            </span>  Cheese</h1>
-            <div class="portfolio">
-                <div class="filters">
-                    <a href="#" data-filter=".new" class="active">
-                        New
-                    </a>
-                    <a href="#" data-filter=".advertising">
-                        League
-                    </a>
-                    <a href="#" data-filter=".branding">
-                        Tournaments
-                    </a>
-                    <a href="#" data-filter=".web">
-                        Clinics
-                    </a>
-                </div>
-                <div class="portfolio-container"> 
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/clinic.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/clinic.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Clinic</h6>
-                                    <p class="subtitle">Youth Clinics</p>
-                                </div>
-                            </div>   
-                        </div>             
-                    </div>
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/dev.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/dev.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Lobos</h6>
-                                    <p class="subtitle">U23 clinic</p>
-                                </div>
-                            </div> 
-                        </div>                         
-                    </div>
-                    <div class="col-md-6 col-lg-4 advertising new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/league56.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/league56.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">League</h6>
-                                    <p class="subtitle">Beautiful evening night</p>
-                                </div>
-                            </div>    
-                        </div>              
-                    </div> 
-                    <div class="col-md-6 col-lg-4 web">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/clinic2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/clinic2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Training </h6>
-                                    <p class="subtitle">Amazing sunset</p>
-                                </div>
-                            </div>
-                        </div>                                                     
-                    </div>
+<section id="events" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">Upcoming Events</h2>
+    <p>Spring League started April 2nd</p>
+    <p>Summer League begins July 1st</p>
+    <p>Sandia Classic Tournament runs May 1st – 4th</p>
+    <p class="mt-2">Sand doubles tournaments can be found under our <a href="#tournaments" class="inline-block px-4 py-1 bg-red-800 text-yellow-300 font-bold rounded shadow hover:bg-red-700 transition">Tournament Sign-Up</a> section.</p>
+</section>
 
-                    <div class="col-md-6 col-lg-4 advertising"> 
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/league3.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/league3.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Bar Courts</h6>
-                                    <p class="subtitle">drink, bump, drink</p>
-                                </div>
-                            </div>
-                        </div>                                                       
-                    </div> 
-                    <div class="col-md-6 col-lg-4 web new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/elnea.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                           <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/elnea.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Elena</h6>
-                                    <p class="subtitle">No ball hits the floor</p>
-                                </div>
-                            </div>
-                        </div>                                                     
-                    </div>
-                    <div class="col-md-6 col-lg-4 advertising new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/sandra.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                           <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/sandra.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Champs</h6>
-                                    <p class="subtitle">League Champs</p>
-                                </div>
-                            </div>
-                        </div>                                                       
-                    </div> 
-                    <div class="col-md-6 col-lg-4 advertising new"> 
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/topcourts.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/topcourts.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Top Courts</h6>
-                                    <p class="subtitle">Bar Courts</p>
-                                </div>
-                            </div>
-                        </div>
-                                
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/bryandave.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/bryandave.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Sandia</h6>
-                                    <p class="subtitle">Sandia Classic</p>
-                                </div>
-                            </div> 
-                        </div>
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/thomas.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/thomas.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Doubles</h6>
-                                    <p class="subtitle">beach Doubles</p>
-                                </div>
-                            </div>
-                        </div>                                                     
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding new">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/audra.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/audra.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Battle at the net</h6>
-                                    <p class="subtitle">who you got</p>
-                                </div>
-                            </div>
-                        </div>                                                    
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/kelsey.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/kelsey.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Meet me at the net</h6>
-                                    <p class="subtitle">big block</p>
-                                </div>
-                            </div>
-                        </div>                                                      
-                    </div> 
-                    <div class="col-md-6 col-lg-4 branding">
-                        <div class="portfolio-item">
-                            <img src="public_html/assets/imgs/buck2.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
-                            <div class="content-holder">
-                                <a class="img-popup" href="public_html/assets/imgs/buck2.jpg"></a>
-                                <div class="text-holder">
-                                    <h6 class="title">Up Up and away </h6>
-                                    <p class="subtitle">CUTTIE</p>
-                                </div>
-                            </div>
-                        </div>                                                   
-                    </div>
-                </div> 
-            </div>  
-        </div>            
-    </section>
-    <!-- End of portfolio section -->
+<section id="community" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">Join Our Community</h2>
+    <ul class="flex flex-col gap-2">
+        <li><a href="https://groupme.com/join_group/106803609/EHDr3YiS" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">NM Volleyball - 4,5,6s Tournaments</a></li>
+        <li><a href="https://groupme.com/join_group/106803466/8tLwyYTa" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">NM Grass Volleyball</a></li>
+        <li><a href="https://groupme.com/join_group/106801703/gwAjIYAJ" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition">NM Co-ed Beach Volleyball</a></li>
+        <li><a href="https://groupme.com/join_group/106801647/aC71kKXH" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition animate-pulse">NM Men's Beach Volleyball</a></li>
+        <li><a href="https://groupme.com/join_group/106801462/MlKAsU7h" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition animate-pulse">NM Women's Beach Volleyball</a></li>
+        <li><a href="https://groupme.com/join_group/106801766/RFlAth0Y" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition animate-pulse">NM BAK Adult Training Sessions</a></li>
+        <li><a href="https://groupme.com/join_group/106803116/h2gKFifG" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition animate-pulse">Personal Training</a></li>
+        <li><a href="https://groupme.com/join_group/105807910/pxl0ZIZV" class="inline-block text-center px-4 py-2 bg-red-800 text-yellow-300 font-bold rounded-xl shadow hover:bg-red-700 transition animate-pulse">Juniors Training</a></li>
+        <li><a href="https://chat.whatsapp.com/GKFygwUdJ1NHST7wVILXJH" class="inline-block text-center px-4 py-2 bg-green-700 text-white font-bold rounded-xl shadow hover:bg-green-600 transition animate-pulse">WhatsApp Group for Leagues</a></li>
+    </ul>
+</section>
 
+<section id="contact" class="mb-10 animate-fade-in text-center">
+    <h2 class="text-2xl font-bold mb-2">Contact Us</h2>
+    <p>Email: stonefacecourts@gmail.com</p>
+    <p>Phone: 505-310-0047</p>
+    <p>Address: 6001 Holly Ave, Albuquerque, NM 87113</p>
+</section>
 
-    <div class="section contact" id="contact">
-        <div id="map" class="map"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="contact-info-card">
-                        <h4 class="contact-title">Get in touch</h4>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-mobile icon-md"></i>
-                            </div>
-                            <div class="col-10 ">
-                                <h6 class="d-inline">Phone : <br> <span class="text-muted">505-310-0047</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-map-alt icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Address :<br> <span class="text-muted">6001 Holly Ave, Albuquerque NM 87113</span></h6>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-1 pt-1 mr-1">
-                                <i class="ti-envelope icon-md"></i>
-                            </div>
-                            <div class="col-10">
-                                <h6 class="d-inline">Email Us :<br> <span class="text-muted">stonefacecourts@gmail.com</span></h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<footer class="text-center mt-12 border-t pt-4 text-sm text-red-800">
+    <p>&copy; 2011–2025 Stoneface Courts. All rights reserved.</p>
+    <div class="mt-6 text-center">
+        <p>Follow us on social media:</p>
+        <div class="flex justify-center gap-4 mt-2">
+            <a href="https://www.facebook.com/stonefacecourts" target="_blank" class="inline-block px-4 py-2 bg-blue-800 text-white font-bold rounded-xl shadow hover:bg-blue-700 transition animate-pulse">Facebook</a>
+            <a href="https://www.instagram.com/stonefacecourts?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="inline-block px-4 py-2 bg-pink-600 text-white font-bold rounded-xl shadow hover:bg-pink-500 transition">Instagram</a>
         </div>
     </div>
-    <footer class="footer py-3">
-        <div class="container">
-            <p>Stoneface Courts 2011</p>
-        </div>
-    </footer>
-
-	<!-- core  -->
-    <script src="public_html/assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="public_html/assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap 3 affix -->
-    <script src="public_html/assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Isotope  -->
-    <script src="public_html/assets/vendors/isotope/isotope.pkgd.js"></script>
-    
-    <!-- Google mpas -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
-
-    <!-- JohnDoe js -->
-    <script src="public_html/assets/js/johndoe.js"></script>
+</footer>
 
 </body>
 </html>
