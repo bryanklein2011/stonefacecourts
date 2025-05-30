@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Premier Sports Multiplex</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .card {
+      background-color: #1f2937;
+      margin: 1rem auto;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      max-width: 100%;
+      transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      background-color: #374151;
+    }
+    .card h2 {
+      color: #60a5fa;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .card p, .card li {
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gray-900 text-center text-white font-sans">
+<header class="bg-black text-white py-4 shadow">
+  <h1 class="text-4xl font-bold">Premier Sports Multiplex</h1>
+  <p class="text-lg">Corrales, NM's premier destination for sports and fitness</p>
+</header>
+
+<nav class="py-4 space-x-4">
+  <a href="#home" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Home</a>
+  <a href="#amenities" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Amenities</a>
+  <a href="#membership" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Membership</a>
+  <a href="#calendar" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Calendar</a>
+  <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Contact</a>
+</nav>
+
+<main class="p-6 max-w-4xl mx-auto">
+  <section id="home" class="card">
+    <h2>Welcome to Premier Sports Multiplex</h2>
+    <p>Corrales, NM's premier destination for sports and fitness.</p>
+  </section>
+
+  <section class="card">
+    <h2>Photo Gallery</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <img src="https://via.placeholder.com/200x150" alt="Gallery 1" class="rounded shadow" />
+      <img src="https://via.placeholder.com/200x150" alt="Gallery 2" class="rounded shadow" />
+      <img src="https://via.placeholder.com/200x150" alt="Gallery 3" class="rounded shadow" />
+      <img src="https://via.placeholder.com/200x150" alt="Gallery 4" class="rounded shadow" />
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Follow Us on Instagram</h2>
+    <iframe src="https://www.instagram.com/premier_victory_complex?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==/embed" width="100%" height="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </section>
+
+  <section id="amenities" class="card">
+    <h2>Amenities</h2>
+    <div class="space-y-6">
+      <div class="card">
+        <h2>🎾 Pickleball</h2>
+        <p>Top-tier indoor courts with lighting for casual and competitive play.</p>
+      </div>
+      <div class="card">
+        <h2>🏀 Basketball</h2>
+        <p>Full-size court for pickup games, tournaments, and training.</p>
+      </div>
+      <div class="card">
+        <h2>🏐 Volleyball</h2>
+        <p>Three courts for all levels of play.</p>
+      </div>
+      <div class="card">
+        <h2>💪 Fitness Gym</h2>
+        <p>Advanced equipment including VertiMax, sleds, and Olympic platforms.</p>
+      </div>
+      <div class="card">
+        <h2>💧 Kangen Water Station</h2>
+        <p>Access to alkaline, antioxidant-rich water for hydration and performance.</p>
+      </div>
+      <div class="card">
+        <h2>🎉 Rentals & Events</h2>
+        <p>Looking for the perfect place to throw a party, host a concert, or celebrate a milestone? We offer customizable rentals for graduations, birthdays, concerts, reunions, and more!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="membership" class="card">
+    <h2>Membership Options</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card"><h2>🏓 Pickleball</h2><p class="text-lg font-semibold">$39.99/month</p><p>Unlimited access and priority booking.</p></div>
+      <div class="card"><h2>💪 Gym-Only</h2><p class="text-lg font-semibold">$10/month</p><p>Access to fitness equipment and training areas.</p></div>
+      <div class="card"><h2>🎯 All-Access</h2><p class="text-lg font-semibold">$49.99/month</p><p>All areas and amenities included.</p></div>
+      <div class="card"><h2>👥 Friends & Family</h2><p class="text-lg font-semibold">$24.99/month</p><p>Group plan for shared savings.</p></div>
+      <div class="card"><h2>🎖️ Fire, Police, Veterans</h2><p class="text-lg font-semibold">$24.99/month</p><p>Thank you for your service!</p></div>
+      <div class="card"><h2>👴 Seniors (50+)</h2><p class="text-lg font-semibold">$24.99/month</p><p>Stay healthy and connected.</p></div>
+      <div class="card"><h2>🎁 Complimentary</h2><p class="text-lg font-semibold">Free</p><p>Prime, Silver Sneakers, Renew Active.</p></div>
+    </div>
+  </section>
+
+  <section id="calendar" class="card">
+    <h2>📅 Event Calendar</h2>
+    <iframe src="https://calendar.google.com/calendar/embed?src=psportsmultiplex%40gmail.com&ctz=America%2FDenver" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact Us</h2>
+    <p>📞 (505) 738-3311</p>
+    <p>📧 info@premiersportsmultiplex.com</p>
+    <p>📍 325 Academy Drive, Corrales, NM</p>
+  </section>
+</main>
+</body>
+</html>
+
+
